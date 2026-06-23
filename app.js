@@ -36,5 +36,21 @@ reset.addEventListener('click', function(){
 function winnerCheck(){
     sqr.forEach(sqr =>{
         // check if textContent is not empty && textContent of 0, 1, 2 are the same
+        const  [a, b, c] = win 
+        if(sqr[a].textContent !== '' && sqr[a].textContent === sqr[b].textContent && sqr[a].textContent === sqr[c].textContent){
+            winner = sqr[a].textContent
+            [sqr[a], sqr[b], sqr[c].forEach(square => square.classList.add(win))]
+        }
+       return winner !== '' 
     })
+}
+
+function tieCheck(){
+    let tie = true
+    sqr.forEach(square => {
+        if(square.textContent === '') {
+            tie = false
+        }
+    })
+    return tie && winner === ''
 }
